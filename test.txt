@@ -1,0 +1,14 @@
+function rxx = myacorr(x)
+
+  N = length(x);
+  rxx = zeros(N,1);
+  for k = 0:(N-1)
+    for i = 1:(N-k)
+      rxx(k+1) = rxx(k+1) + x(i)*x(i+k);
+    endfor
+  endfor
+  rxx = rxx / N;
+
+endfunction
+
+
